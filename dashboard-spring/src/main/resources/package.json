@@ -1,0 +1,19 @@
+{
+  "name": "dashboard-remi-marie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "node": "^15.3.0",
+    "node-sass": "^5.0.0",
+    "scss": "^0.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "sass --watch scss/style.scss:css/style.css"
+  },
+  "author": "remi-marie",
+  "license": "ISC"
+}

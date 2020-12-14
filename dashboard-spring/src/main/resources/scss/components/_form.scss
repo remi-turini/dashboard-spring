@@ -1,0 +1,57 @@
+form {
+  @include color($light-color);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 4rem;
+  margin: auto 0;
+  border-radius: $radius-block;
+
+  h2 {
+    color: $orange;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  p { margin: 1rem 0; }
+
+  p a {
+    color: $orange;
+    font-weight: 700;
+
+    &:hover { text-decoration: underline }
+  }
+
+  div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem auto;
+
+    label { margin-bottom: .5rem }
+
+    input {
+      width: 27.5rem;
+      padding: .75rem 2rem;
+      margin: 0 auto;
+      border: 2px solid $orange;
+      border-radius: .5rem;
+    }
+  }
+
+  .btnConnection {
+    @include color($orange);
+    display: inline-block;
+    padding: .75rem 2rem;
+    margin: 2rem auto;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 1rem;
+    border: 2px solid $orange;
+
+    &:hover { @include color($light-color); }
+  }
+
+}

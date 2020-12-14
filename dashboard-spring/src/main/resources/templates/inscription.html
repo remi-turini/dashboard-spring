@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/script.js"></script>
+</head>
+<body>
+
+    <main class="connectMain">
+        <section class="firstSection">
+            <img src="../img/astronaut.svg" alt="illustration">
+        </section>
+
+        <section class="secondSection">
+            <form action="" method="POST">
+                <h2>Inscrivez-vous et créez votre Dashboard !</h2>
+                <p>
+                    Vous avez déjà un compte ? <a href="connection.html">Connectez-vous !</a>
+                </p>
+
+                <div>
+                    <label for="name">Nom :</label>
+                    <input type="text" name="name" id="name" class="name" placeholder="Nom">
+                </div>
+                <div>
+                    <label for="firstName">Prénom :</label>
+                    <input type="text" name="firstName" id="firstName" class="firstName" placeholder="Prénom">
+                </div>
+                <div>
+                    <label for="connectEmail">Adresse mail :</label>
+                    <input type="email" name="connectEmail" id="connectEmail" class="connectEmail" placeholder="Adresse mail" required>
+                </div>
+                <div>
+                    <label for="connectPasswd">Mot de passe :</label>
+                    <input type="password" name="connectPasswd" id="connectPasswd" class="connectPasswd" placeholder="Mot de passe" required>
+                </div>
+                <div>
+                    <label for="confirmPasswd">Confirmez votre mot de passe :</label>
+                    <input type="password" name="confirmPasswd" id="confirmPasswd" class="confirmPasswd" placeholder="Confirmez votre mot de passe" required>
+                </div>
+
+                <div id="socialNetworks">
+                    <h3>Ou connectez-vous avec :</h3>
+                    <div>
+                        <a href="https://fr-fr.facebook.com/">
+                            <img src="../img/facebook-square-brands.svg" alt="facebook">
+                        </a>
+                        <a href="https://www.instagram.com/">
+                            <img src="../img/instagram-brands.svg" alt="instagram">
+                        </a>
+                        <a href="https://twitter.com/?lang=fr">
+                            <img src="../img/twitter-square-brands.svg" alt="twitter">
+                        </a>
+                        <a href="https://accounts.google.com/ServiceLogin/signinchooser?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=AddSession">
+                            <img src="../img/google-plus-square-brands.svg" alt="google">
+                        </a>
+                        <a href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&rver=7.3.6963.0&wp=MBI_SSL&wreply=https%3a%2f%2fwww.microsoft.com%2ffr-fr%2f&lc=1036&id=74335&aadredir=1">
+                            <img src="../img/yammer-brands.svg" alt="microsoft yammer">
+                        </a>
+                    </div>
+                </div>
+
+                <a href="#" class="btnConnection btnInscription">Inscription</a>
+            </form>
+        </section>
+
+        <section class="thirdSection">
+            <div>
+                <h2>Un mail vous a été envoyé.</h2>
+                <h4>Cliquez sur le lien pour confirmer votre inscription.</h4>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+</html>
