@@ -1,0 +1,69 @@
+/* ======================== */
+/* COMPONENTS METEO SERVICE */
+/* ======================== */
+
+#meteoSection {
+  grid-column: 2/14;
+  grid-row: 1/4;
+  width: 100%;
+  height: auto;
+  @include color($light-color);
+  border-radius: $radius-block;
+  box-shadow: $box-shadow-block;
+
+  form {
+
+    input {
+      width: 30rem;
+      padding: .5rem 2rem;
+      margin: 0 auto;
+      border: 2px solid $orange;
+      border-radius: .5rem;
+    }
+
+    button {
+      width: 9rem;
+      @include color($orange);
+      padding: .5rem;
+      margin: 1rem auto 0 auto;
+      border: 2px solid $orange;
+      border-radius: 2rem;
+      cursor: pointer;
+
+      &:hover { @include color($light-color); }
+    }
+  }
+
+  #divInfosMeteo {
+    width: 30rem;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+
+    .meteo {
+      width: 12rem;
+      height: 12rem;
+      @include color($orange);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: .5rem;
+      border-radius: $radius-block;
+      box-shadow: $box-shadow-block;
+
+      h3 { text-align: center; }
+
+      i, svg {
+        width: 4rem;
+        height: auto;
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+    }
+  }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Dashboard</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../static/js/script.js"></script>
+</head>
+<body>
+
+    <main class="connectMain">
+        <section class="firstSection">
+            <img src="../static/img/astronaut.svg" alt="illustration">
+        </section>
+
+        <section class="secondSection">
+            </form>
+            <form action="" method="post" th:action="@{/connection}">
+                <h2>Connect to your dashboard</h2>
+                <p>
+                    You do not have an account ? <a href="/inscription">Registration !</a>
+                </p>
+
+                <div class="alert alert-info" th:if="${message}" th:text="${message}"></div>
+
+                <div th:if="${param.error}" class="alert alert-error">
+                    Invalid username or password
+                </div>
+
+                <div th:if="${param.logout}" class="alert alert-success">
+                    You have been logged out
+                </div>
+
+                <div class="divInput">
+                    <label for="username">Adresse mail :</label>
+                    <input type="email" name="username" id="username" class="username" placeholder="Mail adress" required>
+                </div>
+                <div class="divInput">
+                    <label for="password">Password :</label>
+                    <input type="password" name="password" id="password" class="password" placeholder="Password" required>
+                </div>
+
+                <div id="socialNetworks">
+                    <h3>Ou connectez-vous avec :</h3>
+                    <div>
+                        <a href="https://fr-fr.facebook.com/">
+                            <img src="img/facebook-square-brands.svg" alt="facebook">
+                        </a>
+                        <a href="https://www.instagram.com/">
+                            <img src="img/instagram-brands.svg" alt="instagram">
+                        </a>
+                        <a href="https://twitter.com/?lang=fr">
+                            <img src="img/twitter-square-brands.svg" alt="twitter">
+                        </a>
+                        <a th:href="@{/oauth2/authorization/google}">
+                            <img src="img/google-plus-square-brands.svg" alt="google">
+                        </a>
+
+                        <a href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&rver=7.3.6963.0&wp=MBI_SSL&wreply=https%3a%2f%2fwww.microsoft.com%2ffr-fr%2f&lc=1036&id=74335&aadredir=1">
+                            <img src="img/yammer-brands.svg" alt="microsoft yammer">
+                        </a>
+                    </div>
+                </div>
+                <button type="submit" class="btnConnection">Connect</button>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>

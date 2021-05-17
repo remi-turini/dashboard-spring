@@ -1,0 +1,313 @@
+.accueilMain {
+  @include gridMain($grid-template-rows: auto auto auto auto auto, $padding: 4rem 0);
+
+  /* GENERAL */
+  section {
+    padding: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  .closedService {
+    @include color($orange);
+    font-size: 20px;
+    text-align: center;
+    padding: 1rem 2rem;
+    margin: 1rem auto 0 auto;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+  /* ===== */
+
+  /* SECTION 1 : RAVIS DE VOUS VOIR */
+  .helloUser {
+    @include color($yellow);
+    grid-column: 2/14;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: space-between;
+    border-radius: $radius-block;
+    box-shadow: $box-shadow-title;
+
+    div {
+      display: flex;
+      flex-direction: column;
+
+      h1 { margin-bottom: 1rem }
+      p { font-size: 28px }
+    }
+
+  }
+  /* ===== */
+
+  /* SECTION 2 : VOTRE DASHBOARD EST VIDE */
+  .boardVoid {
+    grid-column: 2/14;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $light-color;
+    border-radius: $radius-block;
+    box-shadow: $box-shadow-block;
+
+    .bi-clipboard-x {
+      width: auto;
+      height: 14rem;
+      margin-bottom: 5rem;
+      color: $orange;
+    }
+
+    h2 {
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    p { font-size: 22px; }
+
+    #openService {
+      @include color($yellow);
+      height: 2rem;
+      padding: .5rem;
+      margin-top: 1.5rem;
+      border-radius: 3rem;
+      cursor: pointer;
+
+      svg { width: 2rem; height: 2rem; }
+
+      &:hover {
+        @include color($orange);
+        transform: rotate(1turn);
+        transition: .6s ease-out;
+      }
+    }
+  }
+  /* ===== */
+
+  /* SECTION 2 bis : SERVICE DE LA PLATEFORME (ajout des services) */
+  .serviceSection {
+    grid-column: 4/12;
+    //grid-row: 3/4;   => position absolute (section qui s'affiche au premier plan)
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($orange, .5);
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    .addService {
+      @include color($light-color);
+      width: 1082px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 3rem 5rem;
+      border-radius: $radius-block;
+
+      h2 {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto 1rem auto;
+      }
+
+      .bi-x-square {
+        width: 3rem;
+        height: 3rem;
+        position: absolute;
+        z-index: 3;
+        transform: translate(33rem, 0rem);
+        cursor: pointer;
+      }
+
+      .service {
+        @include color($yellow);
+        min-width: 128px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+        margin: 1rem;
+        border-radius: $radius-block;
+        box-shadow: $box-shadow-block;
+
+        h3 {
+          margin: 1rem 0 3rem 0;
+          text-align: center;
+        }
+
+        svg {
+          width: 3rem;
+          height: auto;
+          margin: 0 auto;
+        }
+
+        .bi-plus-circle {
+          width: 2rem;
+          height: auto;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  /* ===== */
+
+  /* SECTION 3 : SERVICE MAP */
+  .mapSection {
+    grid-column: 2/14;
+    grid-row: 3/4;
+    height: 40rem;
+    display: none; //flex
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $light-color;
+    border-radius: $radius-block;
+    box-shadow: $box-shadow-block;
+    position: relative;
+
+    #map {
+      height: 100%;
+      width: 100%;
+      border-radius: $radius-block;
+      position: absolute;
+      z-index: 0;
+    }
+
+    .closedServiceMap {
+      margin-bottom: 3rem;
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+    }
+  }
+  /* ===== */
+
+  /* SECTION 4 : SERVICE METEO */
+  #meteoSection {
+    grid-column: 2/14;
+    grid-row: 4/5;
+    height: auto;
+    @include color($light-color);
+    display: none; //flex
+    flex-direction: column;
+    border-radius: $radius-block;
+    box-shadow: $box-shadow-block;
+
+    form {
+      padding: 0;
+      margin-bottom: 2rem;
+
+      input {
+        width: 30rem;
+        padding: .5rem 2rem;
+        margin: 0 auto;
+        border: 2px solid $orange;
+        border-radius: .5rem;
+      }
+
+      button {
+        width: 9rem;
+        @include color($orange);
+        padding: .5rem;
+        margin: 1rem auto 0 auto;
+        border: 2px solid $orange;
+        border-radius: 2rem;
+        cursor: pointer;
+
+        &:hover { @include color($light-color); }
+      }
+    }
+
+    #divInfosMeteo {
+      width: 30rem;
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0 auto;
+
+      .meteo {
+        width: 12rem;
+        height: 12rem;
+        @include color($orange);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: .5rem;
+        border-radius: $radius-block;
+        box-shadow: $box-shadow-block;
+
+        h3 { text-align: center; }
+
+        i, svg {
+          width: 4rem;
+          height: auto;
+          font-size: 4rem;
+          margin-bottom: 1rem;
+          text-align: center;
+        }
+
+      }
+    }
+  }
+  /* ===== */
+
+  /* SECTION 5 : SERVICE UNSPLASH */
+  #unsplashSection {
+    grid-column: 2/14;
+    grid-row: 5/6;
+    width: auto;
+    height: auto;
+    display: none; //flex
+    flex-direction: column;
+    padding: 3rem 5rem;
+    @include color($light-color);
+    border-radius: $radius-block;
+    box-shadow: $box-shadow-block;
+
+    #divSearch {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+
+      input {
+        width: 27.5rem;
+        padding: .75rem 2rem;
+        margin-right: 2rem;
+        border: 2px solid $orange;
+        border-radius: .5rem;
+      }
+
+      button {
+        @include color($orange);
+        padding: .75rem 2rem;
+        border: 0;
+        border-radius: .5rem;
+
+      }
+    }
+
+    #result {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      img {
+        width: auto;
+        height: 300px;
+        margin: 0 1.5rem 3rem 1.5rem;
+
+      }
+    }
+
+  }
+  /* ===== */
+}
+

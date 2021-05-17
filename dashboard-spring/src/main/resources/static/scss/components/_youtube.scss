@@ -1,0 +1,19 @@
+/* ========================== */
+/* COMPONENTS YOUTUBE SERVICE */
+/* ========================== */
+
+#youtubeSection {
+  grid-column: 2/14;
+  grid-row: 1/4;
+  width: auto;
+  height: auto;
+  padding: 3rem 5rem;
+  @include color($light-color);
+  border-radius: $radius-block;
+  box-shadow: $box-shadow-block;
+
+  /*#authomatizeBtn, #content, #signoutBtn {
+    display: none;
+  }*/
+
+}

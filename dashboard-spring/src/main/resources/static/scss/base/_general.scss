@@ -1,0 +1,39 @@
+/* =========== */
+/*   GENERAL   */
+/* =========== */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+html { height: 100%; }
+
+body {
+  @include gridBody();
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  background-color: $dark-color;
+  box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, ul, li, a {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+
+  padding: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+  padding-block-start: 0;
+  padding-block-end: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

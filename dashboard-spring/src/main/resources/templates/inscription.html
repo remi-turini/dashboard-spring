@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Dashboard</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+
+    <main class="connectMain">
+        <section class="firstSection">
+            <img src="../static/img/astronaut.svg" alt="illustration">
+        </section>
+
+        <section class="secondSection">
+            <form action="" method="post" th:action="@{/inscription}"  th:object="${userDTO}">
+                <h2>Submit and create your dashboard !</h2>
+                <p>
+                    You have already an account ? <a href="/connection">Connect !</a>
+                </p>
+
+                <div class="divInput">
+                    <label>Last name :</label>
+                    <input type="text" id="lastname" name="lastname" th:field="*{lastname}" placeholder="Last name" required th:errorClass="is-invalid">
+                    <div th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}"></div>
+                </div>
+                <div class="divInput">
+                    <label>First name :</label>
+                    <input type="text" id="firstname" name="firstname" th:field="*{firstname}" placeholder="First name" required th:errorClass="is-invalid">
+                    <div th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}"></div>
+                </div>
+                <div class="divInput">
+                    <label>Email :</label>
+                    <input type="text" id="email" name="email" th:field="*{email}" placeholder="Email" required th:errorClass="is-invalid">
+                    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+                </div>
+                <div class="divInput">
+                    <label>Password :</label>
+                    <input type="password" id="password" name="password" th:field="*{password}" placeholder="Password" required>
+                    <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+                </div>
+                <div class="form-group divInput">
+                    <label>Confirm your password :</label>
+                    <input type="rpassword" id="rpassword" name="rpassword" th:field="*{rpassword}" placeholder="Confirm your assword" required>
+                    <div th:if="${#fields.hasErrors('rpassword')}" th:errors="*{rpassword}"></div>
+                </div>
+
+                <div id="socialNetworks">
+                    <h3>Or connect with :</h3>
+                    <div>
+                        <a href="https://fr-fr.facebook.com/">
+                            <img src="../static/img/facebook-square-brands.svg" alt="facebook">
+                        </a>
+                        <a href="https://www.instagram.com/">
+                            <img src="../static/img/instagram-brands.svg" alt="instagram">
+                        </a>
+                        <a href="https://twitter.com/?lang=fr">
+                            <img src="../static/img/twitter-square-brands.svg" alt="twitter">
+                        </a>
+                        <a href="https://accounts.google.com/ServiceLogin/signinchooser?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=AddSession">
+                            <img src="../static/img/google-plus-square-brands.svg" alt="google">
+                        </a>
+                        <a href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&rver=7.3.6963.0&wp=MBI_SSL&wreply=https%3a%2f%2fwww.microsoft.com%2ffr-fr%2f&lc=1036&id=74335&aadredir=1">
+                            <img src="../static/img/yammer-brands.svg" alt="microsoft yammer">
+                        </a>
+                    </div>
+                </div>
+                <button type="submit" class="btnConnection btnInscription">Submit</button>
+            </form>
+        </section>
+
+        <section class="thirdSection">
+            <div>
+                <h2>Un mail vous a été envoyé.</h2>
+                <h4>Cliquez sur le lien pour confirmer votre inscription.</h4>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+</html>

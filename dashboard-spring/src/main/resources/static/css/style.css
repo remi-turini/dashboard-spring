@@ -1,0 +1,669 @@
+/* ========== */
+/*   IMPORT   */
+/* ========== */
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 16px;
+}
+
+label {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+}
+
+input, input::placeholder, button {
+  font-size: 16px;
+  text-align: center;
+}
+
+/* ============ */
+/*    MIXINS    */
+/* ============ */
+/* =========== */
+/*   GENERAL   */
+/* =========== */
+html {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 5rem repeat(13, 1fr);
+  grid-template-rows: 5rem auto;
+  column-gap: 0;
+  row-gap: 0;
+  grid-auto-columns: 0;
+  grid-auto-rows: 0;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  background-color: #2d302d;
+  box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, ul, li, a {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+  padding-block-start: 0;
+  padding-block-end: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  grid-column: 2/15;
+  grid-row: 1/2;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  grid-template-rows: auto;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background-color: #2d302d;
+  color: #fff;
+  box-shadow: 0px 10px 20px #999999;
+  position: sticky;
+  z-index: 4;
+  top: 0;
+  /* GENERAL FOR HEADER */
+  /* ================== */
+}
+header div {
+  grid-row: 1/2;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+header div:hover {
+  background-color: #f6a705;
+}
+header p {
+  font-size: 20px;
+}
+header svg:not(.bi-plus-circle) {
+  margin-left: 1.5rem;
+}
+header .bi-plus-circle {
+  width: auto;
+  height: 24px;
+}
+header .bi-gear-wide-connected {
+  width: auto;
+  height: 32px;
+  color: #f6a705;
+}
+header .btnAdd {
+  padding: 0.5rem 1rem;
+  background-color: #fb6602;
+  margin-right: auto;
+}
+header .btnAdd svg {
+  margin-right: 1rem;
+}
+header .btnAdd:hover {
+  background-color: #fff;
+  color: #fb6602;
+}
+header .headerSettings {
+  grid-column: 3/4;
+  justify-content: flex-start;
+  padding: 0.5rem 1.5rem;
+}
+header .headerSettings:hover svg {
+  color: #fff;
+}
+header .account {
+  grid-column: 4/5;
+  justify-content: flex-end;
+  padding: 0 1rem;
+}
+header .account .bi-emoji-smile {
+  width: auto;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background-color: #f6a705;
+}
+header .account:hover {
+  padding: 0.5rem 1.5rem;
+}
+header .account:hover svg {
+  height: 2rem;
+  color: #f6a705;
+  background-color: #fff;
+}
+
+nav:not(#youtubeNav) {
+  grid-column: 1/2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 1.5rem 3.5rem 1.5rem;
+  background-color: #2d302d;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+}
+nav:not(#youtubeNav) svg {
+  width: auto;
+  height: 2rem;
+  margin: 2rem 0;
+  color: #fff;
+}
+nav:not(#youtubeNav) svg:hover {
+  color: #fb6602;
+}
+
+main {
+  grid-column: 2/15;
+  grid-row: 2/3;
+  background-color: #f0f2f5;
+  color: #2d302d;
+  width: 100%;
+}
+
+form {
+  background-color: #fff;
+  color: #2d302d;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 4rem;
+  margin: auto 0;
+  border-radius: 1rem;
+}
+form h2 {
+  color: #fb6602;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+form p {
+  margin: 1rem 0;
+}
+form p a {
+  color: #fb6602;
+  font-weight: 700;
+}
+form p a:hover {
+  text-decoration: underline;
+}
+form .divInput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem auto;
+}
+form .divInput label {
+  margin-bottom: 0.5rem;
+}
+form .divInput input {
+  width: 27.5rem;
+  padding: 0.75rem 2rem;
+  margin: 0 auto;
+  border: 2px solid #fb6602;
+  border-radius: 0.5rem;
+}
+form .divInput div {
+  padding: 0;
+  margin: 0;
+}
+form .btnConnection {
+  background-color: #fb6602;
+  color: #fff;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  margin: 2rem auto;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 1rem;
+  border: 2px solid #fb6602;
+}
+form .btnConnection:hover {
+  background-color: #fff;
+  color: #2d302d;
+}
+
+/* ========================== */
+/* COMPONENTS YOUTUBE SERVICE */
+/* ========================== */
+#youtubeSection {
+  grid-column: 2/14;
+  grid-row: 1/4;
+  width: auto;
+  height: auto;
+  padding: 3rem 5rem;
+  background-color: #fff;
+  color: #2d302d;
+  border-radius: 1rem;
+  box-shadow: 0px 7px 5px #c8c8c8;
+  /*#authomatizeBtn, #content, #signoutBtn {
+    display: none;
+  }*/
+}
+
+.connectMain {
+  grid-column: 1/15;
+  grid-row: 1/3;
+  background-color: #2d302d;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 2rem repeat(12, 1fr) 2rem;
+  grid-template-rows: auto;
+  column-gap: 0;
+  grid-auto-columns: 0;
+  grid-auto-rows: 0;
+  padding: 6rem 0;
+  height: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.connectMain .firstSection {
+  grid-column: 1/7;
+  grid-row: 1/2;
+}
+.connectMain .firstSection img {
+  width: auto;
+  height: auto;
+  margin: auto 0;
+}
+.connectMain .secondSection {
+  grid-column: 8/13;
+  grid-row: 1/2;
+}
+.connectMain .secondSection form #socialNetworks {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  margin: 2rem auto 0 auto;
+  border-top: 2px solid #2d302d;
+}
+.connectMain .secondSection form #socialNetworks h3 {
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto 1rem auto;
+}
+.connectMain .secondSection form #socialNetworks div {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+.connectMain .secondSection form #socialNetworks div a {
+  padding: 0.25rem;
+  margin: 0 0.5rem;
+  border: 2px solid #fff;
+}
+.connectMain .secondSection form #socialNetworks div a img {
+  width: auto;
+  height: 40px;
+}
+.connectMain .secondSection form #socialNetworks div a:hover {
+  border-bottom: 2px solid #fb6602;
+}
+.connectMain .secondSection form p {
+  text-align: center;
+}
+.connectMain .thirdSection {
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(251, 102, 2, 0.5);
+  position: fixed;
+  top: 0;
+}
+.connectMain .thirdSection div {
+  background-color: #fff;
+  color: #2d302d;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 4rem;
+  margin: auto;
+  text-align: center;
+  border-radius: 1rem;
+}
+.connectMain .thirdSection div h2 {
+  margin-bottom: 2rem;
+}
+.connectMain .thirdSection div h4 {
+  color: #fb6602;
+}
+
+.accueilMain {
+  display: grid;
+  grid-template-columns: 2rem repeat(12, 1fr) 2rem;
+  grid-template-rows: auto auto auto auto auto;
+  column-gap: 0;
+  grid-auto-columns: 0;
+  grid-auto-rows: 0;
+  padding: 4rem 0;
+  /* GENERAL */
+  /* ===== */
+  /* SECTION 1 : RAVIS DE VOUS VOIR */
+  /* ===== */
+  /* SECTION 2 : VOTRE DASHBOARD EST VIDE */
+  /* ===== */
+  /* SECTION 2 bis : SERVICE DE LA PLATEFORME (ajout des services) */
+  /* ===== */
+  /* SECTION 3 : SERVICE MAP */
+  /* ===== */
+  /* SECTION 4 : SERVICE METEO */
+  /* ===== */
+  /* SECTION 5 : SERVICE UNSPLASH */
+  /* ===== */
+}
+.accueilMain section {
+  padding: 5rem;
+  margin-bottom: 2rem;
+}
+.accueilMain .closedService {
+  background-color: #fb6602;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  padding: 1rem 2rem;
+  margin: 1rem auto 0 auto;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.accueilMain .helloUser {
+  background-color: #f6a705;
+  color: #fff;
+  grid-column: 2/14;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 1rem;
+  box-shadow: 0px 5px 10px 5px #c8c8c8;
+}
+.accueilMain .helloUser div {
+  display: flex;
+  flex-direction: column;
+}
+.accueilMain .helloUser div h1 {
+  margin-bottom: 1rem;
+}
+.accueilMain .helloUser div p {
+  font-size: 28px;
+}
+.accueilMain .boardVoid {
+  grid-column: 2/14;
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0px 7px 5px #c8c8c8;
+}
+.accueilMain .boardVoid .bi-clipboard-x {
+  width: auto;
+  height: 14rem;
+  margin-bottom: 5rem;
+  color: #fb6602;
+}
+.accueilMain .boardVoid h2 {
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.accueilMain .boardVoid p {
+  font-size: 22px;
+}
+.accueilMain .boardVoid #openService {
+  background-color: #f6a705;
+  color: #fff;
+  height: 2rem;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+  border-radius: 3rem;
+  cursor: pointer;
+}
+.accueilMain .boardVoid #openService svg {
+  width: 2rem;
+  height: 2rem;
+}
+.accueilMain .boardVoid #openService:hover {
+  background-color: #fb6602;
+  color: #fff;
+  transform: rotate(1turn);
+  transition: 0.6s ease-out;
+}
+.accueilMain .serviceSection {
+  grid-column: 4/12;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(251, 102, 2, 0.5);
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.accueilMain .serviceSection .addService {
+  background-color: #fff;
+  color: #2d302d;
+  width: 1082px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3rem 5rem;
+  border-radius: 1rem;
+}
+.accueilMain .serviceSection .addService h2 {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto 1rem auto;
+}
+.accueilMain .serviceSection .addService .bi-x-square {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  z-index: 3;
+  transform: translate(33rem, 0rem);
+  cursor: pointer;
+}
+.accueilMain .serviceSection .addService .service {
+  background-color: #f6a705;
+  color: #fff;
+  min-width: 128px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0px 7px 5px #c8c8c8;
+}
+.accueilMain .serviceSection .addService .service h3 {
+  margin: 1rem 0 3rem 0;
+  text-align: center;
+}
+.accueilMain .serviceSection .addService .service svg {
+  width: 3rem;
+  height: auto;
+  margin: 0 auto;
+}
+.accueilMain .serviceSection .addService .service .bi-plus-circle {
+  width: 2rem;
+  height: auto;
+  cursor: pointer;
+}
+.accueilMain .mapSection {
+  grid-column: 2/14;
+  grid-row: 3/4;
+  height: 40rem;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0px 7px 5px #c8c8c8;
+  position: relative;
+}
+.accueilMain .mapSection #map {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  position: absolute;
+  z-index: 0;
+}
+.accueilMain .mapSection .closedServiceMap {
+  margin-bottom: 3rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+}
+.accueilMain #meteoSection {
+  grid-column: 2/14;
+  grid-row: 4/5;
+  height: auto;
+  background-color: #fff;
+  color: #2d302d;
+  display: none;
+  flex-direction: column;
+  border-radius: 1rem;
+  box-shadow: 0px 7px 5px #c8c8c8;
+}
+.accueilMain #meteoSection form {
+  padding: 0;
+  margin-bottom: 2rem;
+}
+.accueilMain #meteoSection form input {
+  width: 30rem;
+  padding: 0.5rem 2rem;
+  margin: 0 auto;
+  border: 2px solid #fb6602;
+  border-radius: 0.5rem;
+}
+.accueilMain #meteoSection form button {
+  width: 9rem;
+  background-color: #fb6602;
+  color: #fff;
+  padding: 0.5rem;
+  margin: 1rem auto 0 auto;
+  border: 2px solid #fb6602;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+.accueilMain #meteoSection form button:hover {
+  background-color: #fff;
+  color: #2d302d;
+}
+.accueilMain #meteoSection #divInfosMeteo {
+  width: 30rem;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+.accueilMain #meteoSection #divInfosMeteo .meteo {
+  width: 12rem;
+  height: 12rem;
+  background-color: #fb6602;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0px 7px 5px #c8c8c8;
+}
+.accueilMain #meteoSection #divInfosMeteo .meteo h3 {
+  text-align: center;
+}
+.accueilMain #meteoSection #divInfosMeteo .meteo i, .accueilMain #meteoSection #divInfosMeteo .meteo svg {
+  width: 4rem;
+  height: auto;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.accueilMain #unsplashSection {
+  grid-column: 2/14;
+  grid-row: 5/6;
+  width: auto;
+  height: auto;
+  display: none;
+  flex-direction: column;
+  padding: 3rem 5rem;
+  background-color: #fff;
+  color: #2d302d;
+  border-radius: 1rem;
+  box-shadow: 0px 7px 5px #c8c8c8;
+}
+.accueilMain #unsplashSection #divSearch {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.accueilMain #unsplashSection #divSearch input {
+  width: 27.5rem;
+  padding: 0.75rem 2rem;
+  margin-right: 2rem;
+  border: 2px solid #fb6602;
+  border-radius: 0.5rem;
+}
+.accueilMain #unsplashSection #divSearch button {
+  background-color: #fb6602;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border: 0;
+  border-radius: 0.5rem;
+}
+.accueilMain #unsplashSection #result {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.accueilMain #unsplashSection #result img {
+  width: auto;
+  height: 300px;
+  margin: 0 1.5rem 3rem 1.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */

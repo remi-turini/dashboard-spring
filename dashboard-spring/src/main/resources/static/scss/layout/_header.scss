@@ -1,0 +1,84 @@
+header {
+  grid-column: 2/15;
+  grid-row: 1/2;
+  @include gridHeader($padding: .5rem 2rem);
+  @include color($dark-color);
+  box-shadow: $box-shadow-header;
+  position: sticky;
+  z-index: 4;
+  top: 0;
+
+  /* GENERAL FOR HEADER */
+  div {
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    border-radius: $radius-block;
+    cursor: pointer;
+
+    &:hover { background-color: $yellow; }
+  }
+
+  p { font-size: 20px; }
+
+  svg:not(.bi-plus-circle) { margin-left: 1.5rem }
+
+  .bi-plus-circle { width: auto; height: 24px; }
+  .bi-gear-wide-connected {
+    width: auto; height: 32px;
+    color: $yellow;
+  }
+  /* ================== */
+
+  // DIV
+  .btnAdd {
+    padding: .5rem 1rem;
+    background-color: $orange;
+    margin-right: auto;
+
+    svg { margin-right: 1rem }
+
+    &:hover {
+      background-color: $light-color;
+      color: $orange;
+    }
+  }
+
+  // DIV
+  .headerSettings {
+    grid-column: 3/4;
+    justify-content: flex-start;
+    padding: .5rem 1.5rem;
+
+    &:hover {
+      svg { color: $light-color; }
+    }
+  }
+
+  // DIV
+  .account {
+    grid-column: 4/5;
+    justify-content: flex-end;
+    padding: 0 1rem;
+
+    .bi-emoji-smile {
+      width: auto;
+      height: 3rem;
+      border-radius: .5rem;
+      background-color: $yellow;
+    }
+
+    &:hover {
+      padding: .5rem 1.5rem;
+
+      svg {
+        height: 2rem;
+        color: $yellow;
+        background-color: $light-color;
+      }
+    }
+
+  }
+
+}

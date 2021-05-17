@@ -1,0 +1,21 @@
+{
+  "name": "dashboard-remi-marie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap-icons": "^1.2.1",
+    "gapi-client": "0.0.3",
+    "jquery": "^3.5.1",
+    "ng-gapi": "0.0.94",
+    "node": "^15.3.0",
+    "node-sass": "^5.0.0",
+    "scss": "^0.2.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "sass --watch static/scss/style.scss:static/css/style.css"
+  },
+  "author": "remi-marie",
+  "license": "ISC"
+}

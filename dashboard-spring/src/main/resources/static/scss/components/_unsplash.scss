@@ -1,0 +1,51 @@
+/* =========================== */
+/* COMPONENTS UNSPLASH SERVICE */
+/* =========================== */
+
+#unsplashSection {
+  grid-column: 2/14;
+  grid-row: 1/4;
+  width: auto;
+  height: auto;
+  padding: 3rem 5rem;
+  @include color($light-color);
+  border-radius: $radius-block;
+  box-shadow: $box-shadow-block;
+
+  #divSearch {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    input {
+      width: 27.5rem;
+      padding: .75rem 2rem;
+      margin-right: 2rem;
+      border: 2px solid $orange;
+      border-radius: .5rem;
+    }
+
+    button {
+      @include color($orange);
+      padding: .75rem 2rem;
+      border: 0;
+      border-radius: .5rem;
+
+    }
+  }
+
+  #result {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    img {
+      width: auto;
+      height: 300px;
+      margin: 0 1.5rem 3rem 1.5rem;
+
+    }
+  }
+
+}
